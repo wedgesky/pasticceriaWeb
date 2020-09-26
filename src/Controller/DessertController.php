@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Dessert;
+use App\Entity\Ingredient;
 use App\Form\DessertType;
 use App\Repository\DessertRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -85,6 +86,14 @@ class DessertController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$dessert->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+
+            $ingredients = $entityManager->getRepository(Ingredient::class)->findByDessertId($dessert->getId());
+
+            foreach ($ingredients as $key => $value){
+                $entityManager->remove($value);
+            }
+
+
             $entityManager->remove($dessert);
             $entityManager->flush();
         }

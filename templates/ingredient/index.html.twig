@@ -3,37 +3,40 @@
 {% block title %}Ingredient index{% endblock %}
 
 {% block body %}
-    <h1>Ingredient index</h1>
-
-    <table class="table">
+<div class="container">
+    <h1>Ingredient index for dessert {{ dessert.id }}</h1>
+    <input type="hidden" value="{{ dessert.id }}">
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Um</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Um</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for ingredient in ingredients %}
             <tr>
-                <td>{{ ingredient.id }}</td>
-                <td>{{ ingredient.name }}</td>
-                <td>{{ ingredient.amount }}</td>
-                <td>{{ ingredient.um }}</td>
-                <td>
-                    <a href="{{ path('ingredient_show', {'id': ingredient.id}) }}">show</a>
-                    <a href="{{ path('ingredient_edit', {'id': ingredient.id}) }}">edit</a>
+                <td scope="col">{{ ingredient.id }}</td>
+                <td scope="col">{{ ingredient.name }}</td>
+                <td scope="col">{{ ingredient.amount }}</td>
+                <td scope="col">{{ ingredient.um }}</td>
+                <td scope="col">
+{#                    <a href="{{ path('ingredient_show', {'id': ingredient.id}) }}">show</a>#}
+                    <a href="{{ path('ingredient_edit', {'id': ingredient.id, 'dessert' : dessert.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td scope="col" colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('ingredient_new') }}">Create new</a>
+    <a href="{{ path('ingredient_new', {'id': dessert.id}) }}">Create new</a>
+</div>
+
 {% endblock %}

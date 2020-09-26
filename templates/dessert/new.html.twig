@@ -3,9 +3,12 @@
 {% block title %}New Dessert{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Create new Dessert</h1>
 
     {{ include('dessert/_form.html.twig') }}
 
-    <a href="{{ path('dessert_index') }}">back to list</a>
+    <a class="btn btn-default" href="{{ path('dessert_index') }}">back to list</a>
+</div>
+
 {% endblock %}

@@ -40,7 +40,7 @@ class Dessert
      *
      * @ORM\Column(name="Date_Sell", type="date", nullable=true, options={"default"="NULL"})
      */
-    private $dateSell = 'NULL';
+    private $dateSell = null;
 
     public function getId(): ?int
     {

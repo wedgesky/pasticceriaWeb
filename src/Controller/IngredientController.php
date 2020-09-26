@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Dessert;
 use App\Entity\Ingredient;
 use App\Form\IngredientType;
 use App\Repository\IngredientRepository;
@@ -16,21 +17,37 @@ use Symfony\Component\Routing\Annotation\Route;
 class IngredientController extends AbstractController
 {
     /**
-     * @Route("/", name="ingredient_index", methods={"GET"})
+     * @Route("/{id}", name="ingredient_index", methods={"GET"})
      */
-    public function index(IngredientRepository $ingredientRepository): Response
+    public function index($id, IngredientRepository $ingredientRepository): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $dessert = $entityManager->getRepository(Dessert::class)->findOneById($id);
+
         return $this->render('ingredient/index.html.twig', [
-            'ingredients' => $ingredientRepository->findAll(),
+            'ingredients' => $ingredientRepository->findByDessertId($id),
+            'dessert' =>  $dessert
         ]);
     }
 
     /**
-     * @Route("/new", name="ingredient_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="ingredient_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Dessert  $dessert, Request $request): Response
     {
         $ingredient = new Ingredient();
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $ingredient->setDessert($dessert);
+
+//        if($id){
+//            $dessert = $entityManager->getRepository(Dessert::class)->findOneById($id);
+//
+//            $ingredient->setDessert($dessert);
+//        }
+
+
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
 
@@ -39,12 +56,13 @@ class IngredientController extends AbstractController
             $entityManager->persist($ingredient);
             $entityManager->flush();
 
-            return $this->redirectToRoute('ingredient_index');
+            return $this->redirectToRoute('ingredient_index', ['id' => $dessert->getId()]);
         }
 
         return $this->render('ingredient/new.html.twig', [
             'ingredient' => $ingredient,
             'form' => $form->createView(),
+            'dessert' => $dessert
         ]);
     }
 
@@ -61,7 +79,7 @@ class IngredientController extends AbstractController
     /**
      * @Route("/{id}/edit", name="ingredient_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Ingredient $ingredient): Response
+    public function edit(Request $request, Ingredient $ingredient, Dessert  $dessert): Response
     {
         $form = $this->createForm(IngredientType::class, $ingredient);
         $form->handleRequest($request);
@@ -69,19 +87,20 @@ class IngredientController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ingredient_index');
+            return $this->redirectToRoute('ingredient_index', ['id' => $dessert->getId()]);
         }
 
         return $this->render('ingredient/edit.html.twig', [
             'ingredient' => $ingredient,
             'form' => $form->createView(),
+            'dessert' => $dessert
         ]);
     }
 
     /**
      * @Route("/{id}", name="ingredient_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Ingredient $ingredient): Response
+    public function delete(Request $request, Ingredient $ingredient, Dessert $dessert): Response
     {
         if ($this->isCsrfTokenValid('delete'.$ingredient->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -89,6 +108,6 @@ class IngredientController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('ingredient_index');
+        return $this->redirectToRoute('ingredient_index', ['id' => $dessert->getId()]);
     }
 }

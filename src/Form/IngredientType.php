@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Ingredient;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,7 +16,7 @@ class IngredientType extends AbstractType
             ->add('name')
             ->add('amount')
             ->add('um')
-            ->add('dessert')
+//            ->add('dessert', HiddenType::class)
         ;
     }
 
