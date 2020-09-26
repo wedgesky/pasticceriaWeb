@@ -37,6 +37,54 @@ class DessertRepository extends ServiceEntityRepository
     */
 
 
+    /**
+     * @return Dessert[] Returns an array of Ingredient objects
+     */
+    public function findFeaturedList()
+    {
+        $dayBeforeDBY = new \DateTime();
+        $dayBeforeDBY->setTime(0,0,0);
+        date_sub($dayBeforeDBY,date_interval_create_from_date_string("3 days"));
+        $tomorrow = new \DateTime();
+        date_add($tomorrow, date_interval_create_from_date_string("1 days"));
+        $tomorrow->setTime(0,0,0);
+
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.obsolete = 0')
+            ->andWhere('i.dateSell IS not null')
+            ->andWhere('i.dateSell < :tomorrow')
+            ->andWhere('i.dateSell > :dayBeforeDBY')
+            ->setParameter('tomorrow', $tomorrow, \Doctrine\DBAL\Types\Type::DATETIME)
+            ->setParameter('dayBeforeDBY', $dayBeforeDBY, \Doctrine\DBAL\Types\Type::DATETIME)
+            ->orderBy('i.id', 'DESC')
+            //->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     * @return Dessert[] Returns an array of Ingredient objects
+     */
+    public function findObsoleteList()
+    {
+        $dayBeforeYesterday = new \DateTime();
+        $dayBeforeYesterday->setTime(0,0,0);
+        date_sub($dayBeforeYesterday,date_interval_create_from_date_string("2 days"));
+
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.obsolete = 0')
+            ->andWhere('i.dateSell IS not null')
+            ->andWhere('i.dateSell < :dayBeforeYesterday')
+            ->setParameter('dayBeforeYesterday', $dayBeforeYesterday, \Doctrine\DBAL\Types\Type::DATETIME)
+            ->orderBy('i.id', 'DESC')
+            //->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
     public function findOneById($value): ?Dessert
     {
         return $this->createQueryBuilder('d')

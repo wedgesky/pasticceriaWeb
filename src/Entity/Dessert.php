@@ -42,6 +42,11 @@ class Dessert
      */
     private $dateSell = null;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $obsolete = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -79,6 +84,18 @@ class Dessert
     public function setDateSell(?\DateTimeInterface $dateSell): self
     {
         $this->dateSell = $dateSell;
+
+        return $this;
+    }
+
+    public function getObsolete(): ?bool
+    {
+        return $this->obsolete;
+    }
+
+    public function setObsolete(bool $obsolete): self
+    {
+        $this->obsolete = $obsolete;
 
         return $this;
     }

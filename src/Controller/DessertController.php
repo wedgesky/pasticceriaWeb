@@ -50,12 +50,41 @@ class DessertController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="dessert_show", methods={"GET"})
+     * @Route("/featured", name="dessert_show", methods={"GET"})
      */
-    public function show(Dessert $dessert): Response
+    public function show(DessertRepository $dessertRepository): Response
     {
+        $dessertList = $dessertRepository->findObsoleteList();
+        $entityManager = $this->getDoctrine()->getManager();
+        $yesterday = new \DateTime();;
+        date_sub($yesterday,date_interval_create_from_date_string("1 days"));
+        $dayBeforeYesterday = new \DateTime();;
+        date_sub($dayBeforeYesterday,date_interval_create_from_date_string("2 days"));
+        $yesterday_dt = $yesterday->format('Y-m-d');
+        $dayBeforeYesterday_dt = $dayBeforeYesterday->format('Y-m-d');
+
+        foreach ($dessertList as $key => $value){
+            $value->setObsolete(true);
+            $entityManager->persist($value);
+
+        }
+        $entityManager->flush();
+
+        $dessertList = $dessertRepository->findFeaturedList();
+
+        foreach ($dessertList as $key => $value){
+            if($value->getDateSell()->format('Y-m-d') == $yesterday_dt){
+                $price = floatval( $value->getPrice() ) * (80/100);
+                $value->setPrice(number_format($price,2));
+            }elseif ($value->getDateSell()->format('Y-m-d') == $dayBeforeYesterday_dt){
+                $price = floatval( $value->getPrice() ) * (20/100);
+                $value->setPrice(number_format($price,2));
+            }
+
+        }
+
         return $this->render('dessert/show.html.twig', [
-            'dessert' => $dessert,
+            'desserts' => $dessertList,
         ]);
     }
 

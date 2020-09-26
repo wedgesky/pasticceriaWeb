@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Ingredient;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\DBAL\Types\Type;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -33,6 +34,7 @@ class IngredientRepository extends ServiceEntityRepository
            ->getResult()
        ;
     }
+
 
 
     /*
