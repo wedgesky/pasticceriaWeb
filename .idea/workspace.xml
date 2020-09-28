@@ -19,13 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6788ad0-e9ee-43df-9676-aeed8e8bb066" name="Default Changelist" comment="completato progetto" />
+    <list default="true" id="a6788ad0-e9ee-43df-9676-aeed8e8bb066" name="Default Changelist" comment="inserito dump">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -165,6 +167,8 @@
       <option name="presentableId" value="Default" />
       <updated>1601066636737</updated>
       <workItem from="1601066640141" duration="19339000" />
+      <workItem from="1601212223786" duration="78000" />
+      <workItem from="1601212401239" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1601108279464</created>
@@ -180,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601154117250</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="inserito dump">
+      <created>1601154395951</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601154395951</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,17 +207,23 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="completato progetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="completato progetto" />
+    <MESSAGE value="inserito dump" />
+    <option name="LAST_COMMIT_MESSAGE" value="inserito dump" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601115171853">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1601115171853" />
+    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601212265150">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1601212265150" />
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601150582770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -227,58 +244,58 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="507" y="283" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1601108136537" />
-    <state width="652" height="183" key="GridCell.Tab.0.bottom" timestamp="1601154087064">
+    <state width="652" height="183" key="GridCell.Tab.0.bottom" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601154087064" />
-    <state width="652" height="183" key="GridCell.Tab.0.center" timestamp="1601154087064">
+    <state width="652" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.0.center" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601154087064" />
-    <state width="652" height="183" key="GridCell.Tab.0.left" timestamp="1601154087064">
+    <state width="652" height="183" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.0.left" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601154087064" />
-    <state width="652" height="183" key="GridCell.Tab.0.right" timestamp="1601154087064">
+    <state width="652" height="183" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.0.right" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601154087064" />
-    <state width="652" height="183" key="GridCell.Tab.1.bottom" timestamp="1601154087065">
+    <state width="652" height="183" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.1.bottom" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601154087065" />
-    <state width="652" height="183" key="GridCell.Tab.1.center" timestamp="1601154087064">
+    <state width="652" height="183" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.1.center" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601154087064" />
-    <state width="652" height="183" key="GridCell.Tab.1.left" timestamp="1601154087064">
+    <state width="652" height="183" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.1.left" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601154087064" />
-    <state width="652" height="183" key="GridCell.Tab.1.right" timestamp="1601154087065">
+    <state width="652" height="183" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.1.right" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601154087065" />
-    <state width="652" height="183" key="GridCell.Tab.2.bottom" timestamp="1601154087065">
+    <state width="652" height="183" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.2.bottom" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601154087065" />
-    <state width="652" height="183" key="GridCell.Tab.2.center" timestamp="1601154087065">
+    <state width="652" height="183" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.2.center" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601154087065" />
-    <state width="652" height="183" key="GridCell.Tab.2.left" timestamp="1601154087065">
+    <state width="652" height="183" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.2.left" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601154087065" />
-    <state width="652" height="183" key="GridCell.Tab.2.right" timestamp="1601154087065">
+    <state width="652" height="183" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state width="652" height="183" key="GridCell.Tab.2.right" timestamp="1601154771907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="652" height="183" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601154087065" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601154126769">
+    <state width="652" height="183" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601154771907" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601154404103">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601154126769" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601154404103" />
     <state x="227" y="92" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601115197015">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -299,11 +316,6 @@
           <url>file://$PROJECT_DIR$/src/Controller/RegistrationController.php</url>
           <line>25</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controller/DessertController.php</url>
-          <line>56</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
